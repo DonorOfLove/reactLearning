@@ -8,15 +8,21 @@ const styles = {
     }
 }
 
- function ToDoList(props) {
+function ToDoList(props) {
     return (
         <ul style={styles.ul}>
-            {props.todos.map((todo, index)=>{
-                return <ToDoItem todo={todo} key={todo.id} index={index}/>
+            {props.todos.map((todo, index) => {
+                return (<ToDoItem todo={todo}
+                                  key={todo.id}
+                                  index={index}
+                                  onChange={props.onToggle}/>
+                )
             })}
         </ul>
     )
 }
-ToDoList.protot
 
+ToDoList.propTypes = {
+    todos: PropTypes.arrayOf(PropTypes.object).isRequired
+}
 export default ToDoList
