@@ -1,4 +1,4 @@
-import React,{useContext} from 'react'
+import React, {useContext} from 'react'
 import PropTypes from 'prop-types'
 import Context from "../context";
 
@@ -9,16 +9,22 @@ function ToDoItem({todo, index, onChange}) {
         classes.push('done')
     }
     return (
-        <span className={classes.join(' ')}>
-            <li className='todo'>
+
+        <li className='todo'>
+                  <span className={classes.join(' ')}>
                 <input
                     type='checkbox'
                     onChange={() => onChange(todo.id)}
-                    checked={todo.completed}/>
-                {index + 1}. {todo.title}
-                <button onClick={removeTodo.bind(null, todo.id)}>&times;</button>
-            </li>
-        </span>
+                    checked={todo.completed}
+                    className='check_box'/>
+                      {index + 1}. {todo.title}
+                </span>
+            <button
+                onClick={removeTodo.bind(null, todo.id)}
+                className='remove_btn'>&times;
+            </button>
+        </li>
+
     )
 }
 

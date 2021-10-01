@@ -12,7 +12,6 @@ function App() {
             {id: 2, completed: true, title: 'купить Никиту'},
             {id: 3, completed: false, title: 'поесть наггетсы'}])
 
-
     function toggleTodo(id) {
         setTodos(
             todos.map(todo => {
@@ -41,7 +40,7 @@ function App() {
     return (
         <Context.Provider value={{removeTodo}}>
             <div className="App">
-                <h1>Список дел</h1>
+                <h1 className='title'>Чем бы заняться сегодня?..</h1>
                 <AddTodo onCreate={addTodo}></AddTodo>
                 <ToDoList
                     todos={todos}

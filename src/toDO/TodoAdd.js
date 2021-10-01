@@ -6,7 +6,7 @@ const styles = {
     height: '50px'
 }
 
-function AddTodo(onCreate) {
+function AddTodo({onCreate}) {
     const [value, setValue] = useState('')
 
     function submitHandler(event) {
@@ -18,12 +18,13 @@ function AddTodo(onCreate) {
     }
 
     return (
-        <form onSubmit={submitHandler}>
+        <form onSubmit={submitHandler} className='add_form'>
             <input
+                className='add_input'
                 type="text"
                 value={value}
                 onChange={event => setValue(event.target.value)}/>
-            <button type='submit'>Add</button>
+            <button type='submit' className='btn'>Add</button>
         </form>
     )
 

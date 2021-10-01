@@ -5,22 +5,67 @@ body {
     sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    background-image: url("img/background.jpeg");
+    background-repeat: no-repeat;
+    background-size: 1900px 1000px;
+
 }
 
 .todo{
-    border: 1px solid blueviolet;
+    border: 3px solid black;
     display: flex;
     border-radius: 10px;
     font-family: Candara;
-    font-size: 1.5rem;
+    font-size: 2rem;
     margin-top: 1rem;
     justify-content: space-between;
     text-align: center;
     align-items: center;
+    font-weight: bold;
 }
 .done{
     text-decoration: line-through;
-    color: green;
-    background-color: green;
-}
+    color: #339733;
 
+}
+.btn{
+    background-color: black;
+    color: #98384d;
+    font-size: 1.8rem;
+    text-align: center;
+    border-radius: 5px;
+    margin: 0.2rem;
+}
+.add_form{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.title{
+  font-family: Serif;
+
+}
+.remove_btn{
+    background-color: black;
+    color: #98384d;
+    font-size: 2rem;
+    text-align: center;
+    margin: 0.2rem 1rem;
+}
+.check_box{
+    background-color: black;
+    font-size: 2rem;
+    width: 2rem;
+}
+.add_input{
+    height: 2rem;
+   background-color: transparent;
+    border: 1px solid black;
+border-radius: 5px;
+font-size: 2rem}
+
+@media (max-width:900px){
+body{background-size: cover;
+
+}
+}
