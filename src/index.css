@@ -5,10 +5,17 @@ body {
     sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    background-image: url("img/background.jpeg");
+    background: url("img/background.jpeg") no-repeat center center fixed;
+    background-size: cover;
+    background-attachment: fixed;
     background-repeat: no-repeat;
-    background-size: 1900px 1000px;
+    background-size: 100% 1000px;
+    width: 70%;
+    margin: 0 auto;
 
+}
+ul{
+    padding-inline: 0;
 }
 
 .todo {
@@ -23,33 +30,21 @@ body {
     align-items: center;
     font-weight: bold;
     color: #171616;
+    flex-direction: row;
+
 }
 
 .done {
     text-decoration: line-through;
-    color: #339733;
+    color: rgba(175, 47, 62, 0.56);
 
 }
 
-.btn {
-    background-color: #212020;
-    color: #98384d;
-    font-size: 1.8rem;
-    text-align: center;
-    border-radius: 10px;
-    margin: 0.2rem;
-}
-
-.add_form {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
 
 .title {
     font-family: Serif;
-    font-size: 4.5vw;
-    color: #1a1919;
+    font-size: 50px;
+    color: #1a1a1a;
 
 }
 
@@ -60,25 +55,61 @@ body {
     text-align: center;
     margin: 0.2rem 1rem;
     border-radius: 10px;
+    border: 1px solid #bfbebe;
 }
 
 .check_box {
     background-color: black;
     font-size: 2rem;
     width: 2rem;
+    background-color: #282c34;
+    color: #282c34;
+
+
+
+}
+.add_form {
+    margin: auto;
+    display: flex;
+    justify-content: center;
+
+
+}
+.btn {
+    background-color: #212020;
+    color: #98384d;
+    font-size: 1.8rem;
+    text-align: center;
+    border-radius: 10px;
+    border: 2px solid #bfbebe;
+    margin-left: 2vw;
+
 }
 
-.add_input {
+.add_input {    width: 70%;
     height: 2rem;
     background-color: transparent;
     border: 1px solid black;
-    border-radius: 5px;
-    font-size: 2rem
+    border-radius: 7px;
+    font-size: 2rem;
+    color: #131313;;
+
 }
 
 @media (max-width: 900px) {
     body {
+        width: 95%;
         background-size: cover;
+    }
+    .add_input{
+        width: 100%;
+    }
 
+}
+
+@media (max-width: 405px) {
+  .title{font-size: 40px}
+    .btn{
+        margin: 0;
     }
 }

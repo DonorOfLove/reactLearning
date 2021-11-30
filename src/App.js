@@ -18,7 +18,7 @@ useEffect(()=>{const copy = JSON.parse(localStorage.getItem('todos'))
 
     function setToLocalStore() {
         setTimeout(()=>{const json=JSON.stringify(todos)
-        localStorage.setItem('todos',json)})
+        localStorage.setItem('todos',json)},10  )
         }
 
     function toggleTodo(id) {

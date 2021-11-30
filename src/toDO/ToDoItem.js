@@ -12,11 +12,12 @@ function ToDoItem({todo, index, onChange}) {
 
         <li className='todo'>
                   <span className={classes.join(' ')}>
-                <input
+                <input className='check_box'
                     type='checkbox'
                     onChange={() => onChange(todo.id)}
                     checked={todo.completed}
-                    className='check_box'/>
+                   />
+
                       {index + 1}. {todo.title}
                 </span>
             <button
