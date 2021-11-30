@@ -1,16 +1,25 @@
-import ToDoBtn from "./toDO/TodoAdd";
-import React from 'react'
+import React,{useEffect} from 'react'
 import './App.css';
 import ToDoList from "./toDO/ToDoList";
 import Context from "./context";
 import AddTodo from "./toDO/TodoAdd";
 
-
+let flag=true
 function App() {
-    const [todos, setTodos] = React.useState(
-        [{id: 1, completed: false, title: 'прыгнуть с жопы'},
-            {id: 2, completed: true, title: 'купить Никиту'},
-            {id: 3, completed: false, title: 'поесть наггетсы'}])
+
+    let [todos, setTodos] = React.useState(
+        [{id:1,completed:false,title:'у'}])
+
+
+
+
+useEffect(()=>{const copy = JSON.parse(localStorage.getItem('todos'))
+    setTodos(copy)},[])
+
+    function setToLocalStore() {
+        setTimeout(()=>{const json=JSON.stringify(todos)
+        localStorage.setItem('todos',json)})
+        }
 
     function toggleTodo(id) {
         setTodos(
@@ -19,32 +28,31 @@ function App() {
                     todo.completed = !todo.completed
                 }
                 return todo
-            })
-        )
+            }))
     }
 
     function removeTodo(id) {
         setTodos(todos.filter(todo => todo.id !== id))
-
     }
 
     function addTodo(title) {
-        setTodos(todos.concat([
-            {
-                title,
-                id: Date.now(),
-                completed: false
-            }]))
+        setTodos(todos.concat([{
+            title,
+            id: Date.now(),
+            completed: false
+        }]))
     }
 
     return (
         <Context.Provider value={{removeTodo}}>
             <div className="App">
                 <h1 className='title'>Чем бы заняться сегодня?..</h1>
-                <AddTodo onCreate={addTodo}></AddTodo>
+                <AddTodo onCreate={addTodo}>
+                </AddTodo>
                 <ToDoList
                     todos={todos}
-                    onToggle={toggleTodo}>
+                    onToggle={toggleTodo}
+                    onChange={setToLocalStore(flag)}>
                 </ToDoList>
             </div>
         </Context.Provider>

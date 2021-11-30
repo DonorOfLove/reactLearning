@@ -11,7 +11,7 @@ const styles = {
 function ToDoList(props) {
     return (
         <ul style={styles.ul}>
-            {props.todos.map((todo, index) => {
+               {props.todos.map((todo, index) => {
                     return (<ToDoItem todo={todo}
                                       key={todo.id}
                                       index={index}

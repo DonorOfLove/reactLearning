@@ -1,10 +1,6 @@
 import React, {useState} from 'react'
 import PropTypes from 'prop-types'
 
-const styles = {
-    width: '100px',
-    height: '50px'
-}
 
 function AddTodo({onCreate}) {
     const [value, setValue] = useState('')
@@ -24,8 +20,10 @@ function AddTodo({onCreate}) {
                 type="text"
                 value={value}
                 onChange={event => setValue(event.target.value)}/>
-            <button type='submit' className='btn'>Add</button>
+            <button type='submit' className='btn'>Add
+            </button>
         </form>
+
     )
 
 }

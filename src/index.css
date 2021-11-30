@@ -11,61 +11,74 @@ body {
 
 }
 
-.todo{
-    border: 3px solid black;
+.todo {
+    border: 3px solid #171616;
     display: flex;
     border-radius: 10px;
-    font-family: Candara;
-    font-size: 2rem;
+    font-family: Consolas;
+    font-size: 2.3rem;
     margin-top: 1rem;
     justify-content: space-between;
     text-align: center;
     align-items: center;
     font-weight: bold;
+    color: #171616;
 }
-.done{
+
+.done {
     text-decoration: line-through;
     color: #339733;
 
 }
-.btn{
-    background-color: black;
+
+.btn {
+    background-color: #212020;
     color: #98384d;
     font-size: 1.8rem;
     text-align: center;
-    border-radius: 5px;
+    border-radius: 10px;
     margin: 0.2rem;
 }
-.add_form{
+
+.add_form {
     display: flex;
     align-items: center;
     justify-content: center;
 }
-.title{
-  font-family: Serif;
+
+.title {
+    font-family: Serif;
+    font-size: 4.5vw;
+    color: #1a1919;
 
 }
-.remove_btn{
-    background-color: black;
+
+.remove_btn {
+    background-color: #171616;
     color: #98384d;
     font-size: 2rem;
     text-align: center;
     margin: 0.2rem 1rem;
+    border-radius: 10px;
 }
-.check_box{
+
+.check_box {
     background-color: black;
     font-size: 2rem;
     width: 2rem;
 }
-.add_input{
+
+.add_input {
     height: 2rem;
-   background-color: transparent;
+    background-color: transparent;
     border: 1px solid black;
-border-radius: 5px;
-font-size: 2rem}
-
-@media (max-width:900px){
-body{background-size: cover;
-
+    border-radius: 5px;
+    font-size: 2rem
 }
+
+@media (max-width: 900px) {
+    body {
+        background-size: cover;
+
+    }
 }
