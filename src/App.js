@@ -8,7 +8,9 @@ let flag=true
 function App() {
 
     let [todos, setTodos] = React.useState(
-        [{id:1,completed:false,title:'у'}])
+        [{id:1,completed:false,title:'Воспитать детей'},
+            {id:2,completed:false,title:'Посадить дерево'},
+            {id:3,completed:false,title:'Построить дом'}])
 
 
 
