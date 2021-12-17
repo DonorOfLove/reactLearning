@@ -1,27 +1,25 @@
-import React,{useEffect} from 'react'
+import React, {useEffect} from 'react'
 import './App.css';
 import ToDoList from "./toDO/ToDoList";
 import Context from "./context";
 import AddTodo from "./toDO/TodoAdd";
 
-let flag=true
 function App() {
 
     let [todos, setTodos] = React.useState(
-        [{id:1,completed:false,title:'Воспитать детей'},
-            {id:2,completed:false,title:'Посадить дерево'},
-            {id:3,completed:false,title:'Построить дом'}])
+        [{id: 1, completed: false, title: 'Воспитать детей'},
+            {id: 2, completed: false, title: 'Посадить дерево'},
+            {id: 3, completed: false, title: 'Построить дом'}])
 
 
+    useEffect(() => {
+        setTodos(JSON.parse(localStorage.getItem('todos')))
+    }, [])
 
+    useEffect(() => {
+        localStorage.setItem('todos', JSON.stringify(todos))
+    }, [todos])
 
-useEffect(()=>{const copy = JSON.parse(localStorage.getItem('todos'))
-    setTodos(copy)},[])
-
-    function setToLocalStore() {
-        setTimeout(()=>{const json=JSON.stringify(todos)
-        localStorage.setItem('todos',json)},10  )
-        }
 
     function toggleTodo(id) {
         setTodos(
@@ -53,8 +51,7 @@ useEffect(()=>{const copy = JSON.parse(localStorage.getItem('todos'))
                 </AddTodo>
                 <ToDoList
                     todos={todos}
-                    onToggle={toggleTodo}
-                    onChange={setToLocalStore(flag)}>
+                    onToggle={toggleTodo}>
                 </ToDoList>
             </div>
         </Context.Provider>
