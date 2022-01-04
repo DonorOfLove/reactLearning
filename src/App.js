@@ -17,8 +17,10 @@ function App() {
     }, [])
 
     useEffect(() => {
-        localStorage.setItem('todos', JSON.stringify(todos))
-    }, [todos])
+        window.addEventListener("unload", function() {
+            localStorage.setItem('todos', JSON.stringify(todos))
+        });
+    })
 
 
     function toggleTodo(id) {
