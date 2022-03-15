@@ -1,5 +1,4 @@
 import React, {useEffect} from 'react'
-import './App.css';
 import ToDoList from "./toDO/ToDoList";
 import Context from "./context";
 import AddTodo from "./toDO/TodoAdd";
@@ -11,9 +10,9 @@ function App() {
             {id: 2, completed: false, title: 'Посадить дерево'},
             {id: 3, completed: false, title: 'Построить дом'}])
 
-
     useEffect(() => {
-        setTodos(JSON.parse(localStorage.getItem('todos')))
+        if (localStorage.getItem('todos') !== null) {
+            setTodos(JSON.parse(localStorage.getItem('todos')))  }
     }, [])
 
     useEffect(() => {
@@ -21,8 +20,7 @@ function App() {
             localStorage.setItem('todos', JSON.stringify(todos))
         });
     })
-
-
+    
     function toggleTodo(id) {
         setTodos(
             todos.map(todo => {
@@ -48,7 +46,7 @@ function App() {
     return (
         <Context.Provider value={{removeTodo}}>
             <div className="App">
-                <h1 className='title'>Чем бы заняться сегодня?..</h1>
+                <h1 className='main__title'>Чем бы заняться сегодня?..</h1>
                 <AddTodo onCreate={addTodo}>
                 </AddTodo>
                 <ToDoList
